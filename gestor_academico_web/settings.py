@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-replace-me-for-production'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["gueider.pythonanywhere.com"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
