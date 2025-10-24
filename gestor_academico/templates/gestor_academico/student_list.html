@@ -1,0 +1,9 @@
+{% extends 'gestor_academico/base.html' %}
+{% block content %}
+<h2>Estudiantes (ordenados)</h2>
+<ul>
+  {% for s in students %}
+    <li>{{ s.matricula }} - {{ s.nombre }} (Prom: {{ s.promedio }})</li>
+  {% endfor %}
+</ul>
+{% endblock %}

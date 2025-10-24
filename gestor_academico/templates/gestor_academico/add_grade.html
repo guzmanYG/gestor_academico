@@ -1,0 +1,8 @@
+{% extends 'gestor_academico/base.html' %}
+{% block content %}
+<h2>Añadir nota a {{ student.nombre }}</h2>
+<form method="post">{% csrf_token %}
+  <label>Nota: <input type="number" step="0.01" name="grade" required></label><br>
+  <button type="submit">Añadir</button>
+</form>
+{% endblock %}

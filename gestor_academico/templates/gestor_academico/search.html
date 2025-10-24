@@ -1,0 +1,14 @@
+{% extends 'gestor_academico/base.html' %}
+{% block content %}
+<h2>Búsqueda por matrícula</h2>
+<form method="get">
+  <input type="text" name="q" value="{{ query }}" placeholder="Matrícula...">
+  <button type="submit">Buscar</button>
+</form>
+{% if result %}
+  <h3>Resultado:</h3>
+  <p>{{ result.matricula }} - {{ result.nombre }} (Prom: {{ result.promedio }})</p>
+{% elif query %}
+  <p>No se encontró la matrícula "{{ query }}".</p>
+{% endif %}
+{% endblock %}

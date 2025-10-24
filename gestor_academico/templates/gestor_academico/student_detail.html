@@ -1,0 +1,8 @@
+{% extends 'gestor_academico/base.html' %}
+{% block content %}
+<h2>Detalle: {{ student.nombre }}</h2>
+<p>Matrícula: {{ student.matricula }}</p>
+<p>Promedio: {{ student.promedio }}</p>
+<p>Notas: {{ student.notas }}</p>
+<a href="{% url 'add_grade' student.id %}">Añadir nota</a>
+{% endblock %}

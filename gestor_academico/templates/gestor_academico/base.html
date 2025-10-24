@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestor Académico Web</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="{% static 'gestor_academico/css/style.css' %}">
+</head>
+
+<body class="bg-light">
+  <header class="bg-primary text-white p-3 mb-4 shadow">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <h1 class="h3">Gestor Académico Web</h1>
+      <nav>
+        <a class="btn btn-light btn-sm me-2 mb-1" href="{% url 'index' %}">Inicio</a>
+        <a class="btn btn-light btn-sm me-2 mb-1" href="{% url 'add_student' %}">Agregar Estudiante</a>
+        <a class="btn btn-light btn-sm me-2 mb-1" href="{% url 'order_by_average' %}">Ordenar</a>
+        <a class="btn btn-light btn-sm me-2 mb-1" href="{% url 'search_student' %}">Buscar</a>
+        <a class="btn btn-light btn-sm mb-1" href="{% url 'undo_action' %}">Deshacer</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    Gestor Académico Web - Proyecto Integrador &copy; {{ now|date:"Y" }}
+  </footer>
+</body>
+
+</html>
